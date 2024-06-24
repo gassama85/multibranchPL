@@ -1,0 +1,29 @@
+pipeline 
+
+{ 
+
+    agent any 
+
+    stages 
+
+    { 
+
+       stage('continuousTesting') 
+
+        { 
+
+            steps 
+
+            { 
+
+                git 'https://github.com/gassama85/FunctionalTesting.git' 
+
+                sh 'java -jar /home/ubuntu/.jenkins/workspace/DeclarativePipeline1/testing.jar' 
+
+            } 
+
+        } 
+
+    } 
+
+}
