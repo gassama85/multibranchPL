@@ -1,0 +1,27 @@
+pipeline 
+
+{ 
+
+    agent any 
+
+    stages 
+
+    { 
+
+        stage('continuousDeployment') 
+
+        { 
+
+            steps 
+
+            { 
+
+                deploy adapters: [tomcat9(credentialsId: 'fcf9b542-4c6c-41a7-bce4-558e78a352e9', path: '', url: 'http://44.223.6.165:8080')], contextPath: 'testapp', war: '**/*.war' 
+
+            } 
+
+        } 
+
+    } 
+
+}
